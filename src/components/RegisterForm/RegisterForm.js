@@ -1,4 +1,6 @@
+//instaimage-client/src/components/RegisterForm.js
 import React from 'react'
+
 
 
 export default function RegisterForm(props){
@@ -6,6 +8,9 @@ export default function RegisterForm(props){
     return(<form onSubmit={props.onSubmit}>
 
                 <h1>Sign Up to post images</h1>
+                <label>Username</label>
+                <input type="text" name="username" onChange={props.onChange}/>
+                <br />
                 <label>Email</label>
                 <br />
                 <input type="text" name="email" onChange={props.onChange}/>
