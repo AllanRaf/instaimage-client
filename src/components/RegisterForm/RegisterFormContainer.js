@@ -19,6 +19,7 @@ export class RegisterFormContainer extends Component {
           this.setState({isValid: false})
         }else{
           this.props.registeruser(this.state.username, this.state.email, this.state.password);
+          this.props.history.push('/Login');
         }
     }
       //capture data when user enters information in required fields

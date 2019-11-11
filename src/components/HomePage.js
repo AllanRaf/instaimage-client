@@ -7,7 +7,7 @@ export default class HomePage extends Component {
         return (
             <div>
                 <Link to="/Register">Register as a new user</Link>
-                <button>Log in if you have already registered</button>
+                <Link to="/Login"> Log in if you have already registered</Link>
             </div>
         )
     }

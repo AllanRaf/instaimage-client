@@ -24,6 +24,7 @@ export default store => next => action => {
   }
 
   const requestAction = { ...defaults, ...action};
+  console.log('requestAction', requestAction)
 
   const token = store.getState().auth;
   const {method, path, body} = requestAction;
@@ -41,10 +42,13 @@ export default store => next => action => {
     .set("Authorization", auth)
     .send(body)
     .then(response => {
+      console.log('response body is in api after call', response.body)
+      console.log('requestAction.successType', requestAction.successType)
       store.dispatch({
         type: requestAction.successType,
         payload: response.body
       });
+    
 
       store.dispatch({
         type: requestAction.doneType,
