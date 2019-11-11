@@ -18,15 +18,17 @@ export class RegisterFormContainer extends Component {
           //error message if any of the fields are empty
           this.setState({isValid: false})
         }else{
-          this.props.registeruser(this.username, this.state.email, this.state.password);
+          this.props.registeruser(this.state.username, this.state.email, this.state.password);
         }
     }
       //capture data when user enters information in required fields
       onChange = (event) => {
         this.setState({isValid: true})
+        console.log('eventtargets', event.target.name, 1000)
         this.setState({
           [event.target.name]: event.target.value
         })
+
       }
 
     render() {
