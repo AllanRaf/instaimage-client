@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import ImageForm from './ImageForm'
 import { postImage } from '../../actions/image'
 import { connect } from 'react-redux'
+import ImageListContainer from '../ImageListForm/ImageListContainer'
 
 export class ImageFormContainer extends Component {
 
@@ -28,10 +29,12 @@ export class ImageFormContainer extends Component {
     render() {
         return (
             <div>
+                
                 <ImageForm onChange={this.onChange}
                  onSubmit={this.onSubmit}
                  values={this.state}
                 />
+                <ImageListContainer />
             </div>
         )
     }
