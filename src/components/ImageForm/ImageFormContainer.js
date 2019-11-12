@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import ImageForm from './ImageForm'
+import { postImage } from '../../actions/image'
+import { connect } from 'react-redux'
 
-export default class ImageFormContainer extends Component {
+export class ImageFormContainer extends Component {
 
     state = {
         title: '',
@@ -9,18 +11,36 @@ export default class ImageFormContainer extends Component {
       }
 
     onChange = (event) => {
-        console.log("ONCHANGE")
+        console.log("ONCHANGE", event.target.name, event.target.value)
         this.setState({
           [event.target.name]: event.target.value
         })
       }
+    onSubmit = (event) => {
+        event.preventDefault()
+        console.log('adding new image')
+        this.props.postImage(this.state)
+        this.setState({
+          title: '',
+          url: '',
+        })
+    }
     render() {
         return (
             <div>
                 <ImageForm onChange={this.onChange}
+                 onSubmit={this.onSubmit}
                  values={this.state}
                 />
             </div>
         )
     }
 }
+
+function mapStateToProps (state) {
+  return { 
+            auth: state.auth
+      }
+}
+
+export default connect(mapStateToProps, { postImage })(ImageFormContainer)

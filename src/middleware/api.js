@@ -42,8 +42,7 @@ export default store => next => action => {
     .set("Authorization", auth)
     .send(body)
     .then(response => {
-      console.log('response body is in api after call', response.body)
-      console.log('requestAction.successType', requestAction.successType)
+  
       store.dispatch({
         type: requestAction.successType,
         payload: response.body
