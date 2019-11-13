@@ -3,9 +3,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 This project was created using React.  It is an app where you can register as a new user, log in and post urls of your favourite images.
 
 ## Technologies used
-..* React
-..* React-Redux
-..* Redux middleware
+* React
+* React-Redux
+* Redux middleware
 
 ## Installation
 On your terminal run the following:
