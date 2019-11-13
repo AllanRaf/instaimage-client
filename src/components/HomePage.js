@@ -2,9 +2,10 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import ImageListContainer from './ImageListForm/ImageListContainer'
-import RegisterFormContainer from './RegisterForm/RegisterFormContainer'
+import Button from 'react-bootstrap/Button'
+/*import RegisterFormContainer from './RegisterForm/RegisterFormContainer'
 import LoginFormContainer from './LoginForm/LoginFormContainer'
-import ImageFormContainer from './ImageForm/ImageFormContainer'
+import ImageFormContainer from './ImageForm/ImageFormContainer'*/
 import { connect } from 'react-redux'
 
 export class HomePage extends Component {
@@ -21,7 +22,7 @@ export class HomePage extends Component {
         
         return (
             
-            <div>
+            <div className="jumbotron">
                 <h1>Welcome to insta image</h1>
                 <p>The app where you can share your favourite images online</p>
                 {/*The code below was used to test SPA mode.
@@ -30,8 +31,8 @@ export class HomePage extends Component {
                 {this.props.auth?<ImageFormContainer />:<h1>Create an account or login to post images</h1>}
                 {this.state.register&&<RegisterFormContainer />}
                 {this.state.login&&<LoginFormContainer />*/}
-                <Link to="/Register"> Register </Link>
-                <Link to="/Login"> Log in if you have already registered</Link>
+                <Link to="/Register"><button className="btn btn-outline-primary btn-space"> Register </button></Link>
+                <Link to="/Login"><Button>Log in if you have already registered</Button></Link>
                 <ImageListContainer />
                 
             </div>
