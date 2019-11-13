@@ -1,8 +1,9 @@
 import React from 'react'
 
 export default function ImageForm(props) {
-
-        return(<form onSubmit={props.onSubmit}>
+        return(<div>
+                <button name="logout" type="submit" value="logout" onClick={props.logout}>Logout</button>
+        <form onSubmit={props.onSubmit}>
             <h1>Add an image</h1>
             <label>Title</label>
             <br />
@@ -13,6 +14,7 @@ export default function ImageForm(props) {
             <input type="text" onChange = {props.onChange} name="url" value={props.values.url}/>
               <br />
              <button type = "submit">Submit</button>
-        </form>)
+        </form>
+        </div>)
     
 }

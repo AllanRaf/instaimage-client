@@ -6,17 +6,15 @@ import { getImages } from '../../actions/image'
 
 export class ImageListContainer extends Component {
     componentDidMount() {
+        //display list off all images
         this.props.getImages()
-        console.log('ImageListContainer', this.props)
       }
     render() {
         
         return (
-            
             <div>
                 <ImageList images={this.props.image}/>
             </div>
-            
         )
     }
 }

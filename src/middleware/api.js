@@ -24,7 +24,6 @@ export default store => next => action => {
   }
 
   const requestAction = { ...defaults, ...action};
-  console.log('requestAction', requestAction)
 
   const token = store.getState().auth;
   const {method, path, body} = requestAction;

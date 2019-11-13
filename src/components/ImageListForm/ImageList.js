@@ -10,7 +10,7 @@ export default function ImageList(props) {
                     <div>
                     <h3>{image.title}</h3>
                     <img key = {image.title} src = {image.url} alt = {image.title} /> 
-                    <p>This image was posted by {image.userId}</p>                
+                    <p>This image was posted by {image.User?image.User.username:<p>loading...</p>}</p>                
                     </div>
             )
             }

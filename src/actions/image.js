@@ -18,7 +18,7 @@ export const getImages= (state)=>{
     apiCall: true,
     method: "get",
     path: "/image",
-    body: state,
+    body: null,
     successType: GET_ALL_IMAGES_SUCCESS
     }
 }

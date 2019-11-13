@@ -8,7 +8,6 @@ import { Redirect } from 'react-router-dom'
 export class LoginFormContainer extends Component {
     onSubmit = event => {
         event.preventDefault();
-        console.log('LOGGING IN')
         this.props.login(this.state.email, this.state.password);
       };
     onChange = event => {

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ImageForm from './ImageForm'
 import { postImage } from '../../actions/image'
+import { logoutuser } from '../../actions/users'
 import { connect } from 'react-redux'
 import ImageListContainer from '../ImageListForm/ImageListContainer'
 
@@ -12,7 +13,6 @@ export class ImageFormContainer extends Component {
       }
 
     onChange = (event) => {
-        console.log("ONCHANGE", event.target.name, event.target.value)
         this.setState({
           [event.target.name]: event.target.value
         })
@@ -26,13 +26,20 @@ export class ImageFormContainer extends Component {
           url: '',
         })
     }
+    logout =() =>{
+      this.props.logoutuser()
+      this.props.history.push('/')
+
+    }
+
     render() {
         return (
             <div>
-                
+
                 <ImageForm onChange={this.onChange}
                  onSubmit={this.onSubmit}
                  values={this.state}
+                 logout={this.logout}
                 />
                 <ImageListContainer />
             </div>
@@ -46,4 +53,4 @@ function mapStateToProps (state) {
       }
 }
 
-export default connect(mapStateToProps, { postImage })(ImageFormContainer)
+export default connect(mapStateToProps, { postImage, logoutuser })(ImageFormContainer)
