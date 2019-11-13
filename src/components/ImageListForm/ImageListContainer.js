@@ -24,7 +24,7 @@ function mapStateToProps (state) {
         auth: state.auth,
         username: state.user,
         image: state.image
-        }
+    }
   }
   
   const mapDispatchToProps = { getImages }

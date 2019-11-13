@@ -12,8 +12,7 @@ export const postImage = (state) => {
     }
 };
 
-export const getImages= (state)=>{  
-  console.log('GET IMAGES SUCCESS', state)
+export const getImages= ()=>{  
   return {
     apiCall: true,
     method: "get",

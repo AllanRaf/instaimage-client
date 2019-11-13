@@ -25,11 +25,9 @@ export class RegisterFormContainer extends Component {
       //capture data when user enters information in required fields
       onChange = (event) => {
         this.setState({isValid: true})
-        console.log('eventtargets', event.target.name, 1000)
         this.setState({
           [event.target.name]: event.target.value
         })
-
       }
 
     render() {

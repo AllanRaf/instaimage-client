@@ -1,5 +1,4 @@
 //instaimage-client/src/actions/auth.js
-
 import { LOGIN_SUCCESS, LOGOUT_SUCCESS } from "../actions/auth";
 
 const token = localStorage.getItem("jwt");

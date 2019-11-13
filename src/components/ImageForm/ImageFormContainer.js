@@ -16,7 +16,8 @@ export class ImageFormContainer extends Component {
         this.setState({
           [event.target.name]: event.target.value
         })
-      }
+    }
+
     onSubmit = (event) => {
         event.preventDefault()
         console.log('adding new image')
@@ -26,16 +27,15 @@ export class ImageFormContainer extends Component {
           url: '',
         })
     }
+
     logout =() =>{
       this.props.logoutuser()
       this.props.history.push('/')
-
     }
 
     render() {
         return (
             <div>
-
                 <ImageForm onChange={this.onChange}
                  onSubmit={this.onSubmit}
                  values={this.state}
@@ -50,7 +50,7 @@ export class ImageFormContainer extends Component {
 function mapStateToProps (state) {
   return { 
             auth: state.auth
-      }
+  }
 }
 
 export default connect(mapStateToProps, { postImage, logoutuser })(ImageFormContainer)
