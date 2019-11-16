@@ -1,7 +1,11 @@
 import React from 'react'
 
 export default function ImageForm(props) {
-        return(<div>
+        console.log('props are', props.name)
+        return(
+        
+        <div>
+                <h1>Hello {props.name?<strong>{props.name}</strong>:<strong>there</strong>}</h1>
                 <button name="logout" type="submit" value="logout" onClick={props.logout}>Logout</button>
         <form onSubmit={props.onSubmit}>
             <h1>Add an image</h1>

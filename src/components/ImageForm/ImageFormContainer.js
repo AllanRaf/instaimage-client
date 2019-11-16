@@ -39,10 +39,13 @@ export class ImageFormContainer extends Component {
     render() {
         return (
             <div>
-                <ImageForm onChange={this.onChange}
+                <ImageForm 
+                name={this.props.auth.name}
+                onChange={this.onChange}
                  onSubmit={this.onSubmit}
                  values={this.state}
                  logout={this.logout}
+                 
                 />
                 <ImageListContainer />
             </div>
