@@ -10,11 +10,17 @@ export class ImageListContainer extends Component {
         console.log("COMP CHECK")
         this.props.getImages()
       }
+
+    deleteImage = ()=>{
+        console.log('deleting image')
+    }
     render() {
         
         return (
             <div>
-                <ImageList images={this.props.image}/>
+                <ImageList images={this.props.image}
+                            auth={this.props.auth}
+                            deleteImage={this.deleteImage}/>
             </div>
         )
     }

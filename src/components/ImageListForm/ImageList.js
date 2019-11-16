@@ -1,5 +1,6 @@
 //instaimage-clien/src/components/ImageListForm/ImageList.js
 import React from 'react'
+import auth from '../../reducers/auth'
 
 export default function ImageList(props) {
     console.log('ImageList', props)
@@ -11,6 +12,8 @@ export default function ImageList(props) {
                     <h3>{image.title}</h3>
                     <img className="border border-primary rounded w-50 h-50"  src = {image.url} alt = {image.title} /> 
                     <div>This image was posted by <strong>{image.User?image.User.username:<p>loading...</p>}</strong></div>                
+                     <div>{props.auth?
+                         (image.UserId===props.auth.user_id?<button onClick={props.deleteImage}> delete</button>:<strong>lovely image</strong>):<p>loading</p>}</div>
                     </div>
                 )
                     }
