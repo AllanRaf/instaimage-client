@@ -7,6 +7,7 @@ import { getImages } from '../../actions/image'
 export class ImageListContainer extends Component {
     componentDidMount() {
         //display list off all images
+        console.log("COMP CHECK")
         this.props.getImages()
       }
     render() {

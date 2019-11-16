@@ -24,12 +24,12 @@ export default store => next => action => {
   }
 
   const requestAction = { ...defaults, ...action};
-
+  console.log('in api.js auth is with payload changed', store.getState().auth)
   const token = store.getState().auth;
   const {method, path, body} = requestAction;
 
   const auth = token
-    ? `Bearer ${token}`
+    ? `Bearer ${token.jwt}`
     : undefined;
 
   store.dispatch({

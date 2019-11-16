@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ImageForm from './ImageForm'
-import { postImage } from '../../actions/image'
+import { postImage, getImages } from '../../actions/image'
 import { logoutuser } from '../../actions/users'
 import { connect } from 'react-redux'
 import ImageListContainer from '../ImageListForm/ImageListContainer'
@@ -22,6 +22,9 @@ export class ImageFormContainer extends Component {
         event.preventDefault()
         console.log('adding new image')
         this.props.postImage(this.state)
+        console.log('ADDED NEW IMAGE')
+        this.props.getImages()
+        console.log('GOT NEW IMAGES')
         this.setState({
           title: '',
           url: '',
@@ -49,8 +52,10 @@ export class ImageFormContainer extends Component {
 
 function mapStateToProps (state) {
   return { 
-            auth: state.auth
+            auth: state.auth,
+            image: state.image,
+            username: state.user
   }
 }
 
-export default connect(mapStateToProps, { postImage, logoutuser })(ImageFormContainer)
+export default connect(mapStateToProps, { postImage, logoutuser, getImages })(ImageFormContainer)
