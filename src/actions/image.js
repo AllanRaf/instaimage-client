@@ -1,6 +1,7 @@
 //instaimage-client/src/actions/image.js
 export const IMAGE_POST_SUCCESS = "IMAGE_POST_SUCCESS";
 export const GET_ALL_IMAGES_SUCCESS = "GET_ALL_IMAGES_SUCCESS"
+export const DELETE_IMAGE_SUCCESS = "DELETE_IMAGE_SUCCESS"
 
 export const postImage = (state) => {
   return {
@@ -20,4 +21,14 @@ export const getImages= ()=>{
     body: null,
     successType: GET_ALL_IMAGES_SUCCESS
     }
+}
+
+export const deleteImage = (imageId) =>{
+  return {
+    apiCall:true,
+    method: "delete",
+    path: "/image",
+    body: {imageId},
+    successType: DELETE_IMAGE_SUCCESS
+  }
 }

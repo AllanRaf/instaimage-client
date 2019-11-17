@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 import ImageList from './ImageList'
 import { connect } from 'react-redux'
-import { getImages } from '../../actions/image'
+import { getImages, deleteImage } from '../../actions/image'
 
 export class ImageListContainer extends Component {
     componentDidMount() {
@@ -11,8 +11,10 @@ export class ImageListContainer extends Component {
         this.props.getImages()
       }
 
-    deleteImage = ()=>{
-        console.log('deleting image')
+    onDeleteImage = (event)=>{
+        console.log('deleting image', event.target.id)
+        this.props.deleteImage(event.target.id)
+        this.props.getImages()
     }
     render() {
         
@@ -20,7 +22,7 @@ export class ImageListContainer extends Component {
             <div>
                 <ImageList images={this.props.image}
                             auth={this.props.auth}
-                            deleteImage={this.deleteImage}/>
+                            deleteImage={this.onDeleteImage}/>
             </div>
         )
     }
@@ -34,6 +36,6 @@ function mapStateToProps (state) {
     }
   }
   
-  const mapDispatchToProps = { getImages }
+  const mapDispatchToProps = { getImages, deleteImage }
   
   export default connect(mapStateToProps, mapDispatchToProps)(ImageListContainer)
