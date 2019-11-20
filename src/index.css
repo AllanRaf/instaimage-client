@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-align: center;
 }
 
 code {
@@ -14,8 +15,34 @@ code {
 
 .btn-space {
   margin-right: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
-.flex-center{
-  justify-content: center;
+.line-space {
+  margin-top: 30px;
+}
+
+.flex-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.heading {
+  font-family: "Courier, monospace";
+  font-family: 50px;
+  font-weight: bold;
+}
+
+.secondary-heading {
+  font-family: "Courier, monospace";
+  font-size: 40px;
+}
+
+.third-heading {
+  font-family: "Courier, monospace";
+  font-size: 30px;
 }

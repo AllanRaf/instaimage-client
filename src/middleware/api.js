@@ -1,6 +1,7 @@
 //instaimage_client/src/api.js
 import request from "superagent";
-const baseUrl = "http://localhost:4000";
+import { baseUrl } from '../constants'
+//const baseUrl = "http://localhost:4000";
 
 export const API_LOADING = "@API/LOADING";
 export const API_DONE = "@API/DONE";
