@@ -2,9 +2,12 @@
 import React, { Component } from "react";
 import ImageList from "./ImageList";
 import { connect } from "react-redux";
-import { getImages, deleteImage } from "../../actions/image";
+import { getImages, deleteImage, getImagesOneUser } from "../../actions/image";
 
 export class ImageListContainer extends Component {
+  state = {
+    oneUsersImages: ""
+  };
   componentDidMount() {
     //display list off all images
     this.props.getImages();
@@ -14,13 +17,27 @@ export class ImageListContainer extends Component {
     this.props.deleteImage(event.target.id);
     this.props.getImages();
   };
+  onClickGetUserImages = event => {
+    this.setState({ oneUsersImages: this.props.image[0].User.username });
+    this.props.getImagesOneUser(event.target.id);
+  };
+  onClickGetAllImages = () => {
+    this.setState({ oneUsersImages: "" });
+    this.props.getImages();
+  };
+  onClickFollow = event => {
+    console.log("follow the user", event.target.id);
+  };
   render() {
     return (
       <>
         <ImageList
+          oneUsersImages={this.state.oneUsersImages}
           images={this.props.image}
           auth={this.props.auth}
           deleteImage={this.onDeleteImage}
+          getOneUsersImages={this.onClickGetUserImages}
+          getAllImages={this.onClickGetAllImages}
         />
       </>
     );
@@ -35,6 +52,6 @@ function mapStateToProps(state) {
   };
 }
 
-const mapDispatchToProps = { getImages, deleteImage };
+const mapDispatchToProps = { getImages, deleteImage, getImagesOneUser };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ImageListContainer);
