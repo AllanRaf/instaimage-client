@@ -18,7 +18,9 @@ export default function ImageList(props) {
           <span>for all users</span>
         )}
         {props.oneUsersImages && (
-          <button id={props.images[0].userId}>Follow this user</button>
+          <button id={props.images[0].userId} onClick={props.followUser}>
+            Follow this user
+          </button>
         )}
       </h2>
       {props.images &&
@@ -30,8 +32,8 @@ export default function ImageList(props) {
               src={image.url}
               alt={image.title}
             />
-            <div className="flex-center">
-              This image was posted by{" "}
+            <div className="flex-center image-container">
+              Posted by:{" "}
               <strong>
                 {image.User ? (
                   <b

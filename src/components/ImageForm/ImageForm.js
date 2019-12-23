@@ -1,21 +1,27 @@
 import React from "react";
 
 export default function ImageForm(props) {
-  console.log("props are", props.name);
   return (
     <div className="flex-center">
       <h1>
-        Hello{" "}
+        Welcome back{" "}
         {props.name ? <strong>{props.name}</strong> : <strong>there</strong>}
       </h1>
-      <button name="logout" type="submit" value="logout" onClick={props.logout}>
+      <button
+        className="btn btn-outline-primary btn-space"
+        name="logout"
+        type="submit"
+        value="logout"
+        onClick={props.logout}
+      >
         Logout
       </button>
-      <form onSubmit={props.onSubmit}>
+      <form className="register-form" onSubmit={props.onSubmit}>
         <h1>Add an image</h1>
         <label>Title</label>
         <br />
         <input
+          className="register-input"
           type="text"
           name="title"
           value={props.values.title}
@@ -25,13 +31,19 @@ export default function ImageForm(props) {
         <label>URL</label>
         <br />
         <input
+          className="register-input"
           type="text"
           onChange={props.onChange}
           name="url"
           value={props.values.url}
         />
         <br />
-        <button type="submit">Submit</button>
+        <button
+          className="btn btn-outline-primary btn-space button-container"
+          type="submit"
+        >
+          Submit
+        </button>
       </form>
     </div>
   );

@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import ImageList from "./ImageList";
 import { connect } from "react-redux";
 import { getImages, deleteImage, getImagesOneUser } from "../../actions/image";
+import { followUser } from "../../actions/follow";
 
 export class ImageListContainer extends Component {
   state = {
@@ -27,6 +28,7 @@ export class ImageListContainer extends Component {
   };
   onClickFollow = event => {
     console.log("follow the user", event.target.id);
+    this.props.followUser(event.target.id);
   };
   render() {
     return (
@@ -38,6 +40,7 @@ export class ImageListContainer extends Component {
           deleteImage={this.onDeleteImage}
           getOneUsersImages={this.onClickGetUserImages}
           getAllImages={this.onClickGetAllImages}
+          followUser={this.onClickFollow}
         />
       </>
     );
@@ -52,6 +55,11 @@ function mapStateToProps(state) {
   };
 }
 
-const mapDispatchToProps = { getImages, deleteImage, getImagesOneUser };
+const mapDispatchToProps = {
+  getImages,
+  deleteImage,
+  getImagesOneUser,
+  followUser
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(ImageListContainer);

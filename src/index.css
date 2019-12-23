@@ -15,10 +15,11 @@ code {
 }
 
 .body {
-  background-color: darkgray;
+  background-color: rgb(241, 250, 254);
 }
 
 .btn-space {
+  width: 200px;
   margin-right: 20px;
   margin-top: 20px;
   margin-left: 20px;
@@ -56,4 +57,28 @@ code {
 
 .button-container {
   margin: 20px;
+}
+
+.create-user-button {
+  margin: 20px;
+  border-radius: 10px;
+}
+
+.register-form {
+  border: 5px solid blue;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: rgb(104, 201, 243, 0.5);
+}
+
+.register-input {
+  border: 3px solid blue;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+.image-container {
+  border-bottom: 2px solid rgb(191, 190, 254);
+  margin-bottom: 10px;
 }

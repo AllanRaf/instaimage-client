@@ -35,13 +35,13 @@ export class HomePage extends Component {
                 {this.state.login&&<LoginFormContainer />*/}
           <div className="button-container">
             <Link to="/Register">
-              <button className="btn btn-outline-primary btn-space">
+              <button className="btn btn-outline-primary btn-space btn-lg">
                 Register
               </button>
             </Link>
             <Link to="/Login">
-              <button className="btn btn-outline-primary btn-space">
-                Log in if you have already registered
+              <button className="btn btn-outline-primary btn-space btn-lg">
+                Log in
               </button>
             </Link>
           </div>
