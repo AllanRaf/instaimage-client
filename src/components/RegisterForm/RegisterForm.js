@@ -35,6 +35,7 @@ export default function RegisterForm(props) {
         ) : (
           <p>Email/password must not be empty</p>
         )}
+        <Link to="/Login">Log in to your account</Link>
       </form>
     </>
   );

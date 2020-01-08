@@ -15,13 +15,28 @@ export default function LoginForm(props) {
 
         <label>Email</label>
         <br />
-        <input type="text" name="email" onChange={props.onChange} />
+        <input
+          className="label-input"
+          type="text"
+          name="email"
+          placeholder="your email"
+          onChange={props.onChange}
+        />
         <br />
         <label>Password</label>
         <br />
-        <input type="password" name="password" onChange={props.onChange} />
+        <input
+          className="label-input"
+          type="password"
+          name="password"
+          placeholder="your password"
+          onChange={props.onChange}
+        />
         <br />
-        <button className="create-user-button" type="submit">
+        <button
+          className="btn btn-outline-primary btn-space button-container create-user-button"
+          type="submit"
+        >
           Log In
         </button>
       </form>

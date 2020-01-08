@@ -61,7 +61,7 @@ code {
 
 .create-user-button {
   margin: 20px;
-  border-radius: 10px;
+  width: 100px;
 }
 
 .register-form {
@@ -81,4 +81,9 @@ code {
 .image-container {
   border-bottom: 2px solid rgb(191, 190, 254);
   margin-bottom: 10px;
+}
+
+.label-input {
+  border-radius: 10px;
+  background-color: azure;
 }
